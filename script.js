@@ -5,7 +5,14 @@ jQuery(document).ready(function() {
 
 	$( "#timeline" ).click(function(){
 	    $.getJSON("jsons/timeline.json", function(data) {
-	        alert(data[0].author);
+	        for (var i = 0; i < data.length; i++) {
+	        	$('#tabs-1').append('<div class="msg">'+
+	        	"<img src="+data[i].avatar+" width='40' height='60'>"+
+	        	'<strong>'+data[i].author+'</strong>'+
+        		':'+data[i].title+
+	        	'</div>');
+	        };
+	        
 	    });
 	});
 
