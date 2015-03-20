@@ -10,6 +10,12 @@ jQuery(document).ready(function() {
 	        	 $( '#tabs-1' ).append("<div>" + data[i].body + "<li>" + data[i].date + "</li>" + "</div>");
 	        };
 	        $('#tabs-1').accordion({collapsible: true, active:false, heightStyle: "content"}); 
+	        $.getJSON("jsons/update.json", function(data2) {
+	        	if(data2.length>0){
+	        		alert("hay mensajes nuevos");
+	        	}
+	        });
+
 	    });
 	});
 
